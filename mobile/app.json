@@ -1,13 +1,11 @@
 {
   "expo": {
-    "name": "mobile",
+    "name": "BeTheHero",
     "slug": "mobile",
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": [
-      "ios",
-      "android",
-      "web"
+      "android"
     ],
     "version": "1.0.0",
     "orientation": "portrait",
@@ -25,6 +23,10 @@
     ],
     "ios": {
       "supportsTablet": true
+    },
+    "android": {
+      "package": "com.jdaniloc.bethehero",
+      "versionCode": 1
     }
   }
 }

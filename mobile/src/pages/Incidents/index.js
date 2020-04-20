@@ -10,7 +10,7 @@ import styles from './styles';
 export default function Incidents() {
     const [incidents, setIncidents] = useState([]);
     const [total, setTotal] = useState(0);
-    const [pages, setPages] = useState(1);
+    const [page, setPage] = useState(1);
     const [loading, setLoading] = useState(false);
 
     const navigation = useNavigation();
@@ -32,13 +32,13 @@ export default function Incidents() {
 
         setLoading(true);
 
-        const response = await api.get('incidents',{
-            params: {pages}
+        const response = await api.get('/incidents',{
+            params: {page}
         });
 
         setIncidents([...incidents, ...response.data]);
         setTotal(response.headers['x-total-count']);
-        setPages(pages + 1);
+        setPage(page + 1);
         setLoading(false);
     }
 
